@@ -15,16 +15,7 @@ model Cat {
   name     String @unique
   breed    String 
   friend   Boolean @default(false)
-  facility Facility  @relation(fields: [facilityId], references: [id])
-  facilityId Int
   @@map("cats")
-}
-
-model Facility {
-  id       Int    @id @default(autoincrement())
-  name     String @unique
-  Cat      Cat[]
-  @@map("facilities")
 }
 
 
