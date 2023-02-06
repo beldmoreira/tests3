@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { catSchema } from "../schemas/catsSchema.js";
-import { wrongSchemaError } from "../util/errorUtils.js";
-import * as catsService from "../services/catsService.js";
+import { catSchema } from "../schemas/catsSchema";
+import { wrongSchemaError } from "../util/errorUtils";
+import * as catsService from "../services/catsService";
 
 export async function createCat(req: Request, res: Response) {
   const validation = catSchema.validate(req.body);
