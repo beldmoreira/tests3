@@ -20,6 +20,16 @@ export async function createTheSameCat() {
     },
   });
 }
+export async function createCatWithInvalidId() {
+  await prisma.cat.create({
+    data: {
+      id: 0,
+      name: faker.name.firstName(),
+      breed: faker.animal.cat(),
+      friend: faker.datatype.boolean(),
+    },
+  });
+}
 
 export async function createManyCats() {
   let catsArray = [];

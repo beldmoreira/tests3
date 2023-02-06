@@ -5,6 +5,7 @@ import httpStatus from "http-status";
 import {
   createCat,
   createCatsWithId,
+  createCatWithInvalidId,
   createManyCats,
   createTheSameCat,
 } from "../factories/cats-factories";
@@ -40,6 +41,11 @@ describe("tests route GET'/cats/:id'", () => {
     expect(result.status).toBe(200);
     expect(result.body).not.toBeUndefined();
     expect(result.body.id).toBe(cat.id);
+  });
+
+  it("should return status 500 when the id is not valid", async () => {
+    const result = await supertest(app).get("/cats/100000");
+    expect(result.status).toBe(500);
   });
 });
 
