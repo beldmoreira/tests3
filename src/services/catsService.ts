@@ -1,5 +1,5 @@
-import * as catsRepository from "../repositories/catsRepository.js";
-import { TypeCatData } from "../types/CatsTypes.js";
+import * as catsRepository from "../repositories/catsRepository";
+import { TypeCatData } from "../types/CatsTypes";
 
 export async function insert(createCatData: TypeCatData) {
   const existingCat = await catsRepository.findByName(createCatData.name);

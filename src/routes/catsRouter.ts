@@ -4,7 +4,7 @@ import {
   deleteCat,
   getAllCats,
   getById,
-} from "../controllers/catsController.js";
+} from "../controllers/catsController";
 
 const catsRouter = Router();
 catsRouter.post("/cats", createCat);
