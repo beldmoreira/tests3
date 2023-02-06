@@ -1,5 +1,5 @@
-import { prisma } from "../config/database.js";
-import { TypeCatData } from "../types/CatsTypes.js";
+import { prisma } from "../config/database";
+import { TypeCatData } from "../types/CatsTypes";
 
 export async function createCat(createCatData: TypeCatData) {
   await prisma.cat.create({

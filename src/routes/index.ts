@@ -1,8 +1,6 @@
 import { Router } from "express";
-import catsRouter from "./catsRouter.js";
-import facilitiesRouter from "./facilitiesRouter.js";
+import catsRouter from "./catsRouter";
 
 const router = Router();
 router.use(catsRouter);
-router.use(facilitiesRouter);
 export default router;
